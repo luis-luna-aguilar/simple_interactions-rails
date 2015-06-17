@@ -1,4 +1,4 @@
-<% module_namespacing do -%>
+<% interaction_namespaced do -%>
 class <%= class_name %>
   include SimpleInteraction
 <% if options['requirements'].any? %>

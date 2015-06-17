@@ -4,7 +4,9 @@ require 'test_helper'
 class <%= class_name %>Test < ActiveSupport::TestCase
   
   def test_run_implemented
-    assert <%= class_name %>.private_method_defined?(:run), 'You must implement a run method'
+    assert_nothing_raised do
+      <%= class_name %>.run
+    end    
   end
 
 end
