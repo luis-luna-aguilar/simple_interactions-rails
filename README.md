@@ -23,7 +23,33 @@ Or install it yourself as:
 ## Usage
 
 ```
-    rails g interaction InteractionName
+  rails generate interaction NAME [options]
+
+Options:
+  [--skip-namespace], [--no-skip-namespace]  # Skip namespace (affects only isolated applications)
+  [--requirements=one two three]             # Indicates when to generate requirements
+
+Runtime options:
+  -f, [--force]                    # Overwrite files that already exist
+  -p, [--pretend], [--no-pretend]  # Run but do not make any changes
+  -q, [--quiet], [--no-quiet]      # Suppress status output
+  -s, [--skip], [--no-skip]        # Skip files that already exist
+
+Description:
+    Generates a new interaction on app/interactions folder
+
+Example:
+    rails generate interaction Users::Create options
+
+    This will create:
+        app/interactions/users/create.rb
+
+        module Users
+          class Create
+            requires options
+
+          end
+        end
 ```
 
 ## Contributing
