@@ -1,3 +1,5 @@
+require 'rails/generators'
+
 module SimpleInteraction
   
   class SimpleInteractionGenerator < ::Rails::Generators::Base
