@@ -5,10 +5,9 @@ class InteractionGenerator < ::Rails::Generators::NamedBase
   class_option :requirements, type: 'array', default: []
 
   def create_interaction_file
-    puts options
     template "interaction.rb", File.join('app/interactions/', class_path, "#{file_name}.rb")
   end
 
-  #hook_for :test_framework
+  hook_for :test_framework
 
 end
