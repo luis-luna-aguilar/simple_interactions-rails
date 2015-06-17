@@ -1,6 +1,8 @@
 # SimpleInteraction::Rails
 
-TODO: Write a gem description
+This is a work in progress tests are missing! And test generator is missing too
+
+This simply add a generator to your rails app to create interaction files
 
 ## Installation
 
@@ -20,7 +22,9 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```
+    rails g interaction InteractionName
+```
 
 ## Contributing
 
