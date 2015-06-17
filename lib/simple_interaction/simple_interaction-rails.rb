@@ -1,5 +1,5 @@
 require 'rails'
-require 'simple_interaction/generators/interaction'
+require 'simple_interaction/generators/simple_interaction_generator'
 require "simple_interaction/rails/version"
 
 module SimpleInteraction
