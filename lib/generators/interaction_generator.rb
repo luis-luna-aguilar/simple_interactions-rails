@@ -1,13 +1,13 @@
-require 'rails/generators'
+require 'rails/generators/named_base'
 
-class InteractionGenerator < ::Rails::Generators::Base
+class InteractionGenerator < ::Rails::Generators::NamedBase
   source_root File.expand_path("../templates", __FILE__)
   argument :params, default: []
 
-  def create_initializer_file
-    template "interaction.rb", File.join('app/models', class_path, "#{file_name}.rb")
+  def create_interaction_file
+    template "interaction.rb", File.join('app/interactions/', class_path, "#{file_name}.rb")
   end
 
-  hook_for :test_framework
+  #hook_for :test_framework
 
 end
