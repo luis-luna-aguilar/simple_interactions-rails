@@ -1,6 +1,6 @@
 # SimpleInteraction::Rails
 
-This is a work in progress tests are missing! And test generator is missing too
+This is a work in progress tests are missing! 
 
 This simply add a generator to your rails app to create interaction files
 
