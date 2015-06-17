@@ -4,7 +4,7 @@ module SimpleInteraction
   
   class SimpleInteractionGenerator < ::Rails::Generators::Base
     source_root File.expand_path("../templates", __FILE__)
-    argument :options, default: []
+    argument :params, default: []
 
     check_class_collision
 

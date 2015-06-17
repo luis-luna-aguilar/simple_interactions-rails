@@ -1,8 +1,8 @@
 <% module_namespacing do -%>
 class <%= class_name %>
   include SimpleInteraction
-  <% if attributes.any? %>
-    requires <%= attributes.map(&:to_sym) %>
+  <% if params.any? %>
+    requires <%= params.map(&:to_sym).join(', ') %>
   <% end -%>
 end
 <% end -%>
