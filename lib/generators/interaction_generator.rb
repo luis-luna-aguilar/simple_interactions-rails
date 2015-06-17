@@ -1,6 +1,6 @@
 require 'rails/generators'
 
-class CreateGenerator < ::Rails::Generators::Base
+class InteractionGenerator < ::Rails::Generators::Base
   source_root File.expand_path("../templates", __FILE__)
   argument :params, default: []
 
