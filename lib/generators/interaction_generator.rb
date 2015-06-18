@@ -17,17 +17,26 @@ class InteractionGenerator < ::Rails::Generators::NamedBase
   end
 
   def interaction_namespaced(&block)
-    namespaces = class_path.reverse.map do |module_name|
-      build_namespaces(module_name)
-    end
     content = capture(&block)
+    content = wrap_in_namespaces(content)
     content = wrap_with_namespace(content) if namespaced?
-    content = indent(content).chomp
-    content = namespaces.reduce {|mod, memo| memo % mod } % content
     concat(content)
   end
 
-  def build_namespaces(module_name)
+  def wrap_in_namespaces(content)
+    namespaces = build_namespaces
+    return content unless namespaces.any?
+    content = indent(content, namespaces.size * 2).chomp
+    namespaces.reduce {|mod, memo| memo % indent(mod).chomp } % content    
+  end
+
+  def build_namespaces
+    class_path.reverse.map do |module_name|
+      namespaces_layout(module_name)
+    end    
+  end
+
+  def namespaces_layout(module_name)
     "module #{module_name.camelize}\n%s\nend\n"
   end
 
