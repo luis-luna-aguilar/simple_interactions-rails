@@ -3,6 +3,7 @@ require 'rails/generators/named_base'
 class InteractionGenerator < ::Rails::Generators::NamedBase
   source_root File.expand_path("../templates", __FILE__)
   class_option :requirements, type: 'array', default: []
+  class_option :fail_with, type: 'string', default: nil
 
   def create_interaction_file
     template "interaction.rb", File.join('app/interactions/', class_path, "#{file_name}.rb")
