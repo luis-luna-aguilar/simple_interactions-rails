@@ -2,14 +2,16 @@ Description:
     Generates a new interaction on app/interactions folder
 
 Example:
-    rails generate interaction Users::Create options
+    rails generate interaction Users::Create --requirements user name --fail_with ErrorClass
 
     This will create:
         app/interactions/users/create.rb
 
         module Users
           class Create
-            requires options
+            fail_with 'ErrorClass'
+            
+            requires :user :name
 
           end
         end
