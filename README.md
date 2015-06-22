@@ -25,11 +25,14 @@ Or install it yourself as:
 ## Usage
 
 ```
-  rails generate interaction NAME [options]
+rails generate interaction NAME [options]
 
 Options:
-  [--skip-namespace], [--no-skip-namespace]  # Skip namespace (affects only isolated applications)
-  [--requirements=one two three]             # Indicates when to generate requirements
+      [--skip-namespace], [--no-skip-namespace]  # Skip namespace (affects only isolated applications)
+      [--requirements=one two three]             # Indicates when to generate requirements
+      [--fail-with=FAIL_WITH]                    # Indicates when to generate fail with
+  -t, [--test-framework=NAME]                    # Test framework to be invoked
+                                                 # Default: test_unit
 
 Runtime options:
   -f, [--force]                    # Overwrite files that already exist
@@ -41,14 +44,16 @@ Description:
     Generates a new interaction on app/interactions folder
 
 Example:
-    rails generate interaction Users::Create options
+    rails generate interaction Users::Create --requirements user name --fail_with ErrorClass
 
     This will create:
         app/interactions/users/create.rb
 
         module Users
           class Create
-            requires options
+            fail_with 'ErrorClass'
+
+            requires :user :name
 
           end
         end
