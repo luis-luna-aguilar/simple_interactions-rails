@@ -1,7 +1,5 @@
 # SimpleInteraction::Rails
 
-This is a work in progress tests are missing! 
-
 This simply add a generator to your rails app to create interaction files with 
 https://github.com/boza/interaction
 
