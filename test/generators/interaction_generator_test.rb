@@ -5,7 +5,7 @@ class InteractionGeneratorTest < Rails::Generators::TestCase
   destination File.expand_path("../tmp", File.dirname(__FILE__))
   setup :prepare_destination
 
-  def test_requirements
+  def test_interaction_generation
     run_generator %w(Users::Create --requirements params --fail_with ErrorClass)
     
     assert_file "app/interactions/users/create.rb" do |interaction|
